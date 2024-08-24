@@ -1,0 +1,83 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* Container for cards */
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Maximum width for large screens */
+    width: 100%;
+    justify-content: center; /* Center the cards horizontally */
+}
+
+/* Individual card styles */
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%; /* Full width on small screens */
+    max-width: 300px; /* Maximum width for each card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Card hover effects */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card heading styles */
+.card h2 {
+    font-size: 1.5em;
+    margin: 0 0 15px;
+    color: #333;
+}
+
+/* Card paragraph styles */
+.card p {
+    margin: 0 0 10px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #card-container {
+        gap: 10px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: none;
+    }
+
+    .card h2 {
+        font-size: 1.25em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    #card-container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
