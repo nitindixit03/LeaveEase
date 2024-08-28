@@ -15,7 +15,7 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    max-width: 1200px; /* Maximum width for large screens */
+    max-width: 1500px; /* Increased maximum width for larger screens */
     width: 100%;
     justify-content: center; /* Center the cards horizontally */
 }
@@ -27,7 +27,7 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 100%; /* Full width on small screens */
-    max-width: 300px; /* Maximum width for each card */
+    max-width: 400px; /* Increased maximum width for each card */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box; /* Ensures padding is included in width */
 }
@@ -52,6 +52,28 @@ body {
     line-height: 1.5;
 }
 
+/* Container for approval sections */
+.approval-container {
+    display: flex; /* Use flexbox to align children horizontally */
+    gap: 20px; /* Adjust spacing between the two sections */
+    margin-top: 20px; /* Adds some space above the container */
+}
+
+/* Individual approval section styles */
+.approval-container p {
+    margin: 0; /* Remove default margin */
+    font-weight: bold; /* Make text bold */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Individual checkmark styles */
+.checkmark {
+    color: green; /* Green color for the checkmark */
+    font-size: 1.2em; /* Adjust size if needed */
+    margin-right: 8px; /* Space between checkmark and text */
+}
+
+
 /* Responsive design */
 @media (max-width: 768px) {
     #card-container {
@@ -60,7 +82,7 @@ body {
 
     .card {
         width: 100%;
-        max-width: none;
+        max-width: 100%; /* Ensure the card uses full width on smaller screens */
     }
 
     .card h2 {

@@ -1,14 +1,11 @@
-
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
     const result = {};
-    for (const [key, value] of params.entries()) {  // params.entries()->return the key value pair//ek ek karke key value dega..
-        result[key] = value;                         //result[key] = value ...sets result["name"] = "John Doe".
-                                                                    //   Now, result is { name: "John Doe" }.
+    for (const [key, value] of params.entries()) {
+        result[key] = value;
     }
     return result;
 }
-
 
 function createCard(data) {
     const card = document.createElement('div');
@@ -26,8 +23,10 @@ function createCard(data) {
         <p><strong>Date-Out:</strong> ${dateOut}</p>
         <p><strong>Parent No:</strong> ${parentNo}</p>
         <p><strong>Student No:</strong> ${studentNo}</p>
-        <p><strong>Approved by FA: </strong></p>
-        <p><strong>Approved by HOD: </strong></p>
+        <div class="approval-container">
+            <p><span class="checkmark">✔</span> <strong>Approved by FA</strong></p>
+            <p><span class="checkmark">✔</span> <strong>Approved by HOD</strong></p>
+        </div>
     `;
 
     return card;
@@ -41,11 +40,4 @@ function renderCards() {
     container.appendChild(card);
 }
 
-
-
 renderCards();
-
-
-
-
-//http://127.0.0.1:5500/URL%20Parameters/index.html?name=Md%20Warsi&email=mdwarsi@gmail.com&regNo=RA2311003020332&hostelName=BH-2&hostelRoomNo=508&dateIn=2024-08-01&dateOut=2024-08-15&parentNo=9876543210&studentNo=9335721522
